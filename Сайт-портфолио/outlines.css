@@ -1,0 +1,245 @@
+@font-face {
+    font-weight: 400;
+    font-family: "Segoe Print";
+    src: local("fonts/Segoe_Print.ttf");
+
+}
+
+html,
+body {
+    margin: 0;
+    font-family: "Segoe Print", serif;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+body {
+    min-width: 430px;
+    border: 2px dashed #c7e4ff;
+}
+
+html::before,
+body::before,
+header::before,
+footer::before,
+main::before {
+    color: #7fc1ff;
+}
+
+main,
+header,
+footer {
+    background-color: #f3faff;
+    border: 2px solid #7fc1ff;
+}
+
+nav,
+section,
+article,
+aside {
+    background-color: #f9f7ff;
+    border: 2px solid #9779ec;
+}
+
+nav::before,
+section::before,
+article::before,
+aside::before {
+    color: #9779ec;
+}
+
+h1 {
+    font-size: 18px;
+    background-color: #ffffff;
+    border: 2px solid #ff994f;
+}
+
+h1::before {
+    content: "h1";
+    color: #ff994f;
+}
+
+p {
+    background-color: #ffffff;
+    border: 2px solid #f36dff;
+}
+
+p::before {
+    color: #f36dff;
+    content: "p";
+}
+
+* {
+    position: relative;
+    padding: 25px 25px 20px;
+    margin: 0;
+    border-radius: 4px;
+}
+
+*:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+*::before {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 10px;
+    letter-spacing: 0.04em;
+}
+
+html::before {
+    content: "html";
+}
+
+body::before {
+    content: "body";
+}
+
+main::before {
+    content: "main";
+}
+
+header::before {
+    content: "header";
+}
+
+footer::before {
+    content: "footer";
+}
+
+section::before {
+    content: "section";
+}
+
+article::before {
+    content: "article";
+}
+
+aside::before {
+    content: "aside";
+}
+
+nav::before {
+    content: "nav";
+}
+
+.firstblock {
+    background-color: #d8bfd8;
+    border: 2px solid #800080;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+}
+
+.photo {
+    max-width: 14%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #800080;
+    padding: 0;
+    margin: 0 10px 0 10px;
+    float: left;
+}
+
+.info {
+    width: 60%;
+    float: left;
+}
+
+.name {
+    border-color: #8b008b;
+    border-radius: 10px;
+}
+
+.name::before {
+    color: #8b008b;
+}
+
+ul {
+    padding-left: 40px;
+    padding-top: 0;
+}
+
+li {
+    padding: 0;
+    line-height: 0.8;
+    font-size: 14px;
+}
+
+nav {
+    padding: 10px;
+}
+
+.navigate li {
+    display: inline;
+    margin-right: 15px;
+    border: 2px solid #9779ec;
+    border-radius: 5px;
+    padding: 3px;
+    margin-top: 18px;
+}
+
+body {
+    background: url("images/background6.jpg") fixed;
+    background-size: 100%;
+}
+
+article {
+    margin: 0 0 15px;
+}
+
+h3 {
+    padding: 5px;
+}
+
+section {
+    padding-bottom: 8px;
+    margin-left: 5px;
+}
+
+.about {
+    width: 60%;
+    max-width: 65%;
+    float: left;
+}
+
+.contacts {
+    width: 30%;
+    max-width: 35%;
+    float: right;
+    padding-left: 8px;
+}
+
+.quote {
+    clear: both;
+}
+
+.contacts img {
+    width: 20px;
+    float: left;
+    padding: 3px 6px 3px 3px;
+}
+
+.code {
+    width: 62%;
+    max-width: 65%;
+    float: left;
+    padding: 30px 5px 5px;
+}
+
+.code h3 {
+    margin-left: 15px;
+}
+
+.code pre {
+    padding-top: 0;
+}
+
+.animal {
+    float: right;
+    width: 30%;
+    max-width: 35%;
+}

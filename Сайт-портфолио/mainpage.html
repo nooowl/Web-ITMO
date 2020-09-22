@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Русских Полина М33041</title>
+    <link href="outlines.css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="firstblock">
+        <img class="photo" src="images/photo.jpg" alt="photo">
+        <div class="info">
+            <h1 class="name">Полина Русских</h1>
+            <ul>
+                <li>20 лет</li>
+                <li>студентка ИТМО</li>
+                <li>репетитор</li>
+            </ul>
+        </div>
+    </div>
+</header>
+<nav>
+    <ul class="navigate">
+        <li><a href="#about">Обо мне</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+        <li><a href="#animal">Тотемное животное</a></li>
+        <li><a href="#code">Кусочек кода</a></li>
+        <li><a href="#quote">Цитата</a></li>
+    </ul>
+</nav>
+<main>
+    <article class="about">
+        <a name="about"></a>
+        <h3>Обо мне</h3>
+        <p>Всем привет! Меня зовут Полина. Сейчас я учусь на третьем курсе в университете ИТМО на факультете информационных технологий и программирования.<br>
+            Кроме того я занимаюсь репетиторством таких предметов как математика и информатика. Я помагаю разобраться в программе или с экзаменами школьникам.<br>
+            В дальнейшем я бы хотела работать в сфере QA, или Support, или даже в чем-то связанным с творчеством, так как мне это нравится.</p>
+    </article>
+    <article class="contacts">
+        <a name="contacts"></a>
+        <h3>Контакты</h3>
+        <section>
+            <img src="images/inst.png">
+            _n_o_w_l_
+        </section>
+        <section>
+            <img src="images/telegram.png">
+            @n_o_w_l
+        </section>
+        <section>
+            <img src="images/mail.png">
+            greenowl403@gmail.com
+        </section>
+    </article>
+    <article class="code">
+        <a name="code"></a>
+        <h3>Кусочек кода</h3>
+        <pre><code><p>
+private static Stream&ltArguments&gt providerSort() {
+    return Stream.of(
+        Arguments.of("firstName", "desc"),
+        Arguments.of("firstName", "asc"),
+        Arguments.of("lastName", "desc"),
+        Arguments.of("lastName", "asc"),
+        Arguments.of("email", "desc"),
+        Arguments.of("email", "asc"),
+        Arguments.of("id", "desc"),
+        Arguments.of("id", "asc"),
+        Arguments.of("dayOfBirth", "desc"),
+        Arguments.of("dayOfBirth", "asc")
+    );
+}
+
+@ParameterizedTest
+@MethodSource("providerSort")
+public void shouldReturnCorrectSortedUsersList(String field, String comp) {
+    JsonNode response = given().log().all()
+        .queryParam("sort", field + "," + comp)
+        .when().get("/api/users")
+        .then().log().ifValidationFails()
+        .statusCode(200)
+        .extract().body().as(JsonNode.class)
+        .get("_embedded").get("users");
+
+    ArrayList&ltUser&gt users = new ArrayList<>();
+
+    for (int i = 0; i < response.size(); i++) {
+        StringReader reader = new StringReader(response.get(i).toString());
+
+        ObjectMapper mapper = new ObjectMapper();
+        User user = null;
+        try {
+            user = mapper.readValue(reader, User.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        users.add(user);
+    }
+
+    assertThat(isSorted(users, field, comp)).isEqualTo(true);
+}</p>
+        </code></pre>
+    </article>
+    <article class="animal">
+        <a name="animal"></a>
+        <h3>Тотемное животное</h3>
+        <pre>
+░░░░░░░░▄▄▀▀▀▀▀▀▀▀▄▄░░░░░░░░
+░░░░░░▄▀▓░░▒░░▒▒▒▒▒▒█▄░░░░░░
+░░░░▄█▓▓▓░░░░▒▒▒▒▒▒▒▒█▀▄░░░░
+░░▄▀█▌▓▓▓░░░░▒▒▒▒▒▒▒▒▐▌▓▀▄░░
+░█▓▓█▌▓▄▄▓░░░▒▒▒▒▄▄▒▒▒█▓▓▀▄░
+▄▀▓▓█▌▓▀█▓░░░▒▒▒▒█▓▀▒▄▌▓▓▓▓█
+█▓▓▓▄▀▓▓▓▓░░░▒▒▒▒▒▒▒▐░░▌▓▓▓█
+▀▄▓▓█░▀▓▓░░░░░░░▒▒▒▒▐░▄▌▓▓█░
+░█▓▓▓█░▓░░░░░░░░░▒▒▐░░█▓▓▓█░
+░▀▄▓▓█░▐░░▄▄███▄░░░▐░░░▀▄▀░░
+░░▀▄▄▀░▐░░█████▀░░▄▀░░░░░░░░
+░░░░░░░░▐░░▀██▀░▄▀░░░░░░░░░░
+░░░░░░░░░▀▄▄▄▄▄▀░░░░░░░░░░░░
+        </pre>
+    </article>
+    <article class="quote">
+        <a name="quote"></a>
+        <h3>Цитата</h3>
+        <em>Жизнь - это то, что с тобой происходит, пока ты строишь планы.</em><br>
+        Джон Леннон
+    </article>
+</main>
+
+<footer>
+    2020 Polina Russkikh
+</footer>
+
+</body>
+</html>
